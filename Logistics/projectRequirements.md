@@ -7,11 +7,6 @@
   - [Requirements in Detail](#requirements-in-detail)
 - [Workflow](#workflow)
 - [Technology](#technology)
-  - [Front End](#front-end)
-  - [Back End](#back-end)
-  - [Database](#database)
-
-
 
 ## General Details
 
@@ -61,21 +56,20 @@ The developers of the software refer to the team building the software. The recr
 
 ## Workflow
 
-- Website design (landing page, recruiters, applicants) front end. Different pages for everyone
-- Login for recruiters and applicants
-- Applicant page: Upload pdf, add skills, rating, update button
-- Recruiter page: Take query, show drop down, process query, display relevant details
+- The website will have three pages, the landing page will be end point of the submitted URL. This landing page will contain information about the site and an option for the users to login.
+- Two separate pages will be provided, one each for the recruiters and applicants.
+- The applicant page will have options to upload resumes, add skills from our dropdown menu and to rate themselves.
+- The recruiter page will have options to search for keywords from a dropdown menu. And a display view for the resumes returned.
+- Django will handle the integration of the website front end to the database
+- A database schema will be designed to store the details of the recruiters and the applicants with unique ids.
 
 ## Technology
 
-### Front End
+| Front End | Back End | Database |
+| --- | --- | --- |
+| HTML | Django | SQL |
+| CSS | Python | |
+| JavaScript | | |
+| Bootstrap | | |
 
-- HTML, CSS, vanilla JS and Bootstrap
-
-### Back End
-
-- Django
-
-### Database
-
-- SQL
+---
