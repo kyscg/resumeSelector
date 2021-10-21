@@ -10,10 +10,10 @@
 
 ## General Details
 
-- Team Name			: `mkmkm`
-- Project Title		: Resume Selector
-- Instructor		: Dr. Charu Sharma
-- Mentor			: Radhika Rao
+- Team Name			    : `mkmkm`
+- Project Title		  : Resume Selector
+- Instructor		    : Dr. Charu Sharma
+- Mentor			      : Radhika Rao
 - GitHub Repository	: https://github.com/kyscg/resumeSelector
 - Members
     - Mahesh Balaji Dudhanale [2021201010]
