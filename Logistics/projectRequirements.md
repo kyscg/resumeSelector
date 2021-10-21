@@ -51,19 +51,31 @@ The developers of the software refer to the team building the software. The recr
 
 ### Requirements in Detail
 
-| ID | Requirement | Description | Category | Notes | Owner |
-| --- | --- | --- | --- | --- | --- |
-| 1 | |||||
-| 2 | |||||
-| 3 | |||||
-| ... | |||||
+| ID | Requirement | Description | Category |
+| --- | --- | --- | --- |
+| 1 |Landing Page|Design the landing page|Front-end|
+| 2 | Recruiter Page |Design the Recruiter Page|Front-end|
+| 3 | Applicant Page |Design the Applicant Page|Front-end|
+| 4 |Database Schema |Design the database schema|Database|
+| 5 |Backend server |Handle HTTP calls|Backend|
 
 ## Workflow
+
+- Website design (landing page, recruiters, applicants) front end. Different pages for everyone
+- Login for recruiters and applicants
+- Applicant page: Upload pdf, add skills, rating, update button
+- Recruiter page: Take query, show drop down, process query, display relevant details
 
 ## Technology
 
 ### Front End
 
+- HTML, CSS, vanilla JS and Bootstrap
+
 ### Back End
 
+- Django
+
 ### Database
+
+- SQL
