@@ -4,16 +4,114 @@
 
 {% block content %}
 
-    register page
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
+<div class="card shadow p-3 mb-5 bg-white rounded"
+    style="width: 38rem; margin: 0 auto; float: none; margin-bottom: 10px; border-radius: 1rem!important; ">
+    <div class="card-body">
+        <h5 class="card-title" align='center' style="color:rgb(18, 96, 175);">Register for new account</h5>
+        <form method="POST" action="" id="register">
+            
 
-        <input type="submit" value="Submit">
-    </form>
+             {% csrf_token %}
+            <ul class="contactList" style="list-style-type:none;">
+                <li id="username" name="username" class="contact">
+                
+                    <label>Username </label>
+                    {{ form.username}}
+                    
+                </li>
+                <li id="email" name="email" class="contact">
+                    <label>Email </label>
+                    {{ form.email }}
+                </li>
+                <li id="password1" name="password1" class="contact">
+                    <label>Enter Password </label>
+                    {{ form.password1 }}
+                
+                </li>
+                <li id="password2" name="password2" class="contact">
+                    <label>Confirm Password </label>
+                    {{ form.password2 }}
+                </li>
+
+                <li id="is_recruiter" name="is_recruiter" class="contact">
+                    <label>Recruiter</label>
+                    {{ form.is_recruiter }}
+                </li>
+
+                <li id="is_applicant" name="is_applicant" class="contact">
+                    <label>Applicant</label>
+                    {{ form.is_applicant }}
+                </li>
+
+                <li id="gender" name="gender" class="contact">
+                    <label>Gender</label>
+                    {{ form.gender }}
+                </li>
+                <li id="skills" name="skills" class="contact">
+                    <label for="id_skills">Enter your skills.</label>
+                    {{ form.skills }}
+                </li>
+                <li id="accept_t_n_c" name="accept_t_n_c" class="contact">
+                    <label>Agree to terms and conditions.</label>
+                    {{ form.accept_t_n_c }}
+                </li>
+
+                <li>
+                    <input type="submit" class="btn btn-dark" value="Submit">
+                </li>
+            
+                {% if msg != "" and msg != None  %}
+                <p style="color:red">
+                    *{{ msg }}
+                </p>
+            {% endif %}
+            </ul>
+
+            
+            
+        </form>
+
+    </div>
+
+</div>
+<script>
+    $(function () {
+
+        document.querySelector('#id_skills').removeAttribute("required"); 
+        $('#id_skills').val("None");
+
+    $('div[class="bootstrap-tagsinput"]').hide();
+    $('label[for="id_skills"]').hide();
+
+	$('input[name="is_applicant"]').on('click', function () {
+		if ($(this).prop('checked')) {
+            
+            
+            document.querySelector('#id_skills').setAttribute("required", "");
+            $('div[class="bootstrap-tagsinput"]').fadeIn();
+            $('label[for="id_skills"]').fadeIn();
+            
+
+        } else {
+            $('div[class="bootstrap-tagsinput"]').hide();
+            
+            $('label[for="id_skills"]').hide();
+            document.querySelector('#id_skills').removeAttribute("required"); 
+
+        }
+    });
+
+    $('input[name="is_recruiter"]').on('click', function () {
+		if ($(this).prop('checked')) {
+        
+            console.log(document.querySelector('#id_skills'));
+        
+            document.querySelector('#id_skills').removeAttribute("required"); 
+
+        }
+    });
+});
+</script>
+
 
 {% endblock content %}
-
-
-
-

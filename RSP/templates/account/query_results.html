@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    <div class="card shadow p-3 mb-5 bg-white rounded"
+    style="width: 58rem; margin: 0 auto; float: none; margin-bottom: 10px; border-radius: 1rem!important; ">
+    <div class="card-body">
+
+        {% comment %} {{ args["candidate"] }} {% endcomment %}
+
+        <h2>Recruiter Query.</h2>
+
+            <ul style="list-style-type:none;">
+                {% if data %}
+                    {% for d in data %}
+                    <li id="query" name="query" class="contact">
+
+                        <label><b>Candidate:  </b></label>
+                        <ul>Name:{{d.username}}</ul>
+                        <ul>Email: {{d.email}}</ul>
+                       <ul>{% if d.pdf_resume.name != "" %}
+                            Download your resume: 
+                            <button class="btn btn-dark">
+                                <a href={{d.pdf_resume.url}} target="_blank">download</a>
+                            </button>
+                        {% endif %}</ul><br>
+                        
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    No Results
+                {% endif %}
+                {% comment %} <li>
+                    <input  class="btn btn-dark" type="submit" value="Get candidates">
+                </li> {% endcomment %}
+            </ul>
+
+            
+
+{% comment %}             
+        </form> {% endcomment %}
+    </div>
+    </div>
+    {% else %}
+        <h2> Not logged in. </h2>
+
+    {% endif %}
+    
+{% endblock content %}

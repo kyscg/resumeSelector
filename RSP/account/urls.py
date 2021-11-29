@@ -33,4 +33,9 @@ urlpatterns = [
     path('profile/', views.profile, name="profile"),
     path('profile/edit', views.edit_profile, name="edit_profile"),
     path('profile/upload_resume', views.upload_resume, name="upload_resume"),
+    path('recruiter/query', views.rec_query, name="rec_query"),
+    path('recruiter/results', views.rec_results, name="rec_results"),
 ]
+
+# TODO: link for query page on recruiter's home page
+# TODO: remove "upload resume" for recruiter

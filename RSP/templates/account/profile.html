@@ -4,75 +4,64 @@
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        <h1> Profile Page </h1>
-        <h1> Hello, </h1>
-        <h2>Username</h2>
-        <p>
-            {{user.username}}
-        </p>
+{% if user.is_authenticated %}
+<div class="card shadow p-3 mb-5 bg-white rounded"
+    style="width: 58rem; margin: 0 auto; float: none; margin-bottom: 10px; border-radius: 1rem!important; ">
+    <div class="card-body">
 
-        <h2>Email</h2>
-        <p>
+        <p style="color: black !important;"><b> Hello, </b> {{user.username}}</p>
+        <p style="color: black !important;">
+            <b>Email : </b>
             {{user.email}}
         </p>
-        <h2>Gender</h2>
-        <p>
+        <p style="color: black !important;">
+            <b>Gender : </b>
             {{user.gender}}
         </p>
-        <h2>Role</h2>
-        {% if user.is_recruiter %}
-        <p>You are a recruiter.</p>
-        {% else %}
-            <p>You are an applicant.</p>
-        {% endif %}
-        <h2>Resume</h2>
-        {% if user.pdf_resume.url is not None %}
-            <p>
+        <p style="color: black !important;">
+            <b>Role : </b>
+            {% if user.is_recruiter %}
+            You are a recruiter.
+            {% else %}
+            You are an applicant.
+            {% endif %}
+        </p>
+        
+        {% if not user.is_recruiter %}
+            <p style="color: black !important;">
+                <b>Resume : </b>
+                {% if user.pdf_resume.url is not None %}
                 Download your resume
-                <button>
+                <button class="btn btn-dark">
                     <a href={{user.pdf_resume.url}} target="_blank">download</a>
                 </button>
-            </p>
-        {% else %}
-            <p>
+                {% else %}
                 You have not uploaded resume.
-                <button>
+                <button class="btn btn-dark">
                     <a href="upload_resume" target="_blank">
                         Upload Resume
                     </a>
                 </button>
+                {% endif %}
             </p>
+        {% else %}
+        <button class = "btn btn-dark">
+            <a href="/recruiter/query"> Query </a>
+        </button>
         {% endif %}
-        <h2>Username</h2>
-        <p>
-            {{user.username}}
-        </p>
-        <h2>Username</h2>
-        <p>
-            {{user.username}}
-        </p>
-        <h2>Username</h2>
-        <p>
-            {{user.username}}
-        </p>
-        <h2>Username</h2>
-        <p>
-            {{user.username}}
-        </p>
-        <h2>Username</h2>
-        <p>
-            {{user.username}}
-        </p>
 
-        <button>
+        <button class="btn btn-dark">
             <a href="edit">
                 Edit Profile
             </a>
         </button>
-    {% else %}
-        <h2> Not looged in. </h2>
+    </div>
 
-    {% endif %}
-    
+</div>
+{% else %}
+<h2> Not logged in. </h2>
+
+
+{% endif %}
+
 {% endblock content %}

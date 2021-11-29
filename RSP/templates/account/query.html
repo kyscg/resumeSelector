@@ -9,37 +9,28 @@
     style="width: 58rem; margin: 0 auto; float: none; margin-bottom: 10px; border-radius: 1rem!important; ">
     <div class="card-body">
 
-        <h2>Upload your Resume.</h2>
+        <h2 align ="center" style="color:rgb(18, 96, 175);">Recruiter Query</h2>
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% comment %} {{form.as_p}} {% endcomment %}
 
             <ul  style="list-style-type:none;">
-                <li id="username" name="username" class="contact">
+               
 
-                    
-                    <label>Username </label>
-                    {{ form.username}}
-                    
-                </li>
+                <li id="query" name="query" class="contact">
 
-                <li id="pdf_resume" name="pdf_resume" class="contact">
-
-                    
+                    <h8>*Enter the skills required with ',' delimeter</h8><br>
                     <label>Resume </label>
-                    {{ form.pdf_resume}}
+                    {{ form.query}}
                     
                 </li>
                 
 
                 <li>
-                    <input  class="btn btn-dark" type="submit" value="Upload Resume">
+                    <input  class="btn btn-dark" type="submit" value="Get candidates">
                 </li>
             </ul>
-
-            
-
-            
+                      
         </form>
     </div>
     </div>
