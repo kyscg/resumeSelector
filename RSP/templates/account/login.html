@@ -4,15 +4,25 @@
 
 {% block content %}
 
-    Login inpge
-    <form method="POST" action="">
-        {% csrf_token %}
+<div class="card shadow p-3 mb-5 bg-white rounded" style="width: 38rem; margin: 0 auto; float: none; margin-bottom: 10px; border-radius: 1rem!important; ">
+    <div class="card-body">
+        <form method="POST" action="">
+            <h5 class="card-title" style="color:rgb(18, 96, 175);">Log In</h5>
+            {% csrf_token %}
 
-        
-        {{form.as_p}}
+            {{form.as_p}}
 
+            <input type="submit" class="btn btn-dark" value="Submit">
 
-        <input type="submit" value="Submit">
-    </form>
+            {% if msg != "" and msg != None  %}
+                <p style="color:red">
+                    *{{ msg }}
+                </p>
+            {% endif %}
+            
+        </form>
 
+    </div>
+
+</div>
 {% endblock content %}

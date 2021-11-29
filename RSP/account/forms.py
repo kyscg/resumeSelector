@@ -46,7 +46,7 @@ class LoginForm(forms.Form):
     username = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'class':'form-control',
+                'class':'form-control dark',
 
             }
         )
@@ -98,6 +98,21 @@ class SignUpForm(UserCreationForm):
             }
         )
     )
+    skills = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'class':'form-control',
+                'data-role' : 'tagsinput'
+                
+            }
+        )
+    )
+    accept_t_n_c = forms.BooleanField(required = True)
+    #     attrs={
+    #         'Required':
+            
+    #     }
+    # )
 
     class Meta:
         model = User
@@ -108,5 +123,18 @@ class SignUpForm(UserCreationForm):
             'password2', 
             'is_recruiter', 
             'is_applicant', 
-            'gender'
+            'gender',
+            'skills',
+            'accept_t_n_c'
         )
+
+
+class QueryForm(forms.Form):
+    query = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'class':'form-control dark',
+
+            }
+        )
+    )

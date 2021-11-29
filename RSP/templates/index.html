@@ -4,15 +4,14 @@
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        <h2>You are logged in.</h2>
-    {% else %}
-        <h2>Plseae</h2>
-        <h2>Login or SignUp</h2>
-    {% endif %}
+{% if user.is_authenticated %}
+<h2>You are logged in.</h2>
+{% else %}
+<h1 align="center"> Welcome to Resume Selector </h1>
+<div style="margin: 120px 50px">
+<h5 align="center">Login or Signup to continue</h5>
+</div>
+{% endif %}
+
 
 {% endblock content %}
-
-
-
-
